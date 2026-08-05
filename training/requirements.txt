@@ -1,0 +1,21 @@
+# PetRWKV 训练管线依赖
+# PyTorch 生态
+torch>=2.0.0
+pytorch-lightning==1.9.5
+
+# 数据处理
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Tokenizer
+tokenizers>=0.13.0
+
+# 配置
+omegaconf>=2.3.0
+
+# 日志
+tqdm>=4.65.0
+
+# 测试
+pytest>=7.4.0
+pytest-cov>=4.1.0
