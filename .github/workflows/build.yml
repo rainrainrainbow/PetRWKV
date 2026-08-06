@@ -21,10 +21,21 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
 
-      - name: Setup Flutter and build APK
+      - name: Create Flutter project structure
+        run: |
+          flutter create pet_rwkv_temp
+          cp -r pet_rwkv_temp/android app/
+          cp pwd_rwkv_temp/lib/main.dart app/lib/
+          rm -rf pet_rwkv_temp
+
+      - name: Setup Flutter dependencies
         run: |
           cd app
           flutter pub get
+
+      - name: Build APK
+        run: |
+          cd app
           flutter build apk --release
 
       - uses: actions/upload-artifact@v4
