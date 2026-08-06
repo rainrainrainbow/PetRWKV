@@ -4,14 +4,18 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 env:
   FLUTTER_VERSION: '3.24.5'
 
 jobs:
-  build:
+  build-apk:
+    name: Build Android APK
     runs-on: ubuntu-latest
     timeout-minutes: 60
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -29,7 +33,7 @@ jobs:
           cd app && flutter pub get && flutter build apk --debug
       - uses: actions/upload-artifact@v4
         with:
-          name: pet-rwkv-apk
+          name: pet-jwkv-apk
           path: app/build/app/outputs/flutter-apk/app-debug.apk
           if-no-files-found: error
           retention-days: 30
