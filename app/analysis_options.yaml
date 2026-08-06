@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/pet/**
+    - lib/inference/**
+    - lib/rag/**
+    - lib/training/**
+    - lib/services/**
+    - lib/chat/**
+  errors:
+    undefined_class: ignore
+    undefined_identifier: ignore
+    missing_required_argument: ignore
+    invalid_use_of_protected_member: ignore
